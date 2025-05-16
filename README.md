@@ -16,3 +16,12 @@ Each row represents one ZIP code in one month and includes 33 engineered feature
 - Socioeconomic modeling using census and amenity data  
 - Multimodal learning with tabular and satellite inputs  
 - Urban change detection through imagery and vision–language models
+
+## Data Access
+
+| Purpose | Link |
+|---------|------|
+| **Raw & log-transformed CSVs** | <https://virginiatech-my.sharepoint.com/:f:/g/personal/shengkun_vt_edu/EunsL7TsRDRMifm7MmVIbXsBGw5Mwg5JwuFsfXXAKHpvZQ?e=Z4tbU9> |
+| **Multimodal satellite and filled-missing data** | <https://www.kaggle.com/datasets/shengkunwang/housets-dataset> |
+
+---
