@@ -57,7 +57,7 @@ python stat.py \
   --model all \
   --combos "(6,3),(6,6),(6,12),(12,3),(12,6),(12,12)" \
   --n_components 4
-
+```
 
 ### Foundation-Model Experiments
 All foundation-model runs can be started directly with the Python scripts inside the `Foundation/` folder.
