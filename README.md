@@ -45,7 +45,7 @@ Baselines
 We run our DNN baselines with the official [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
 
 1. Copy the patched files in the `DNN/` directory so they overwrite the corresponding source files in the library.  
-2. Download all datasets into the `dataset/` directory before training.
+2. Download log dataset into the `dataset/` directory before training.
 
 ### Statistics & Machine-Learning Baselines
 
