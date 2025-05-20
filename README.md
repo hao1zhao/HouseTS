@@ -1,27 +1,63 @@
-HouseTS is a large-scale, multimodal dataset for long-term house price forecasting and socioeconomic analysis. It contains monthly observations from 2012 to 2023, covering 6,000 ZIP codes across 30 major U.S. metropolitan areas. The dataset integrates four types of information:
+HouseTS
+=======
 
-🏠 **Housing Market Features:** From Zillow and Redfin, including sale prices, inventory, listings, days on market, and transaction metrics.
+*Large-scale, multimodal U.S. housing dataset + full benchmarking suite*
 
-📊 **Socioeconomic Indicators:** From the American Community Survey (ACS), including income, population, labor force, poverty, rent, and commute times.
+HouseTS offers monthly data from **2012‒2023** for ≈ 6 000 ZIP codes across 30 major metropolitan areas. Each (ZIP, month) record contains **33 engineered features** drawn from four complementary sources:
 
-📌 **Points of Interest (POIs):** Monthly ZIP-level counts of amenities such as restaurants, schools, supermarkets, parks, and transit stations, collected via OpenStreetMap.
+| Modality | Main sources | Examples of variables |
+|----------|--------------|-----------------------|
+| **Housing-market metrics** | Zillow Research, Redfin Data Center | Median sale/list price, inventory, new listings, days on market, transaction volumes |
+| **Socioeconomic indicators** | U.S. Census Bureau **ACS 5-Year** | Income, population, labor-force size, poverty rate, rent burden, median commute time |
+| **Points of Interest (POIs)** | OpenStreetMap via **ohsome API** | Monthly counts of restaurants, schools, supermarkets, parks, transit stations |
+| **Aerial imagery** | USDA **NAIP** (1 m RGB) | Annual snapshots for a subset of ZIP codes in the Washington D.C.–Maryland–Virginia (DMV) region |
 
-🛰️ **Satellite Imagery:** 1-meter resolution NAIP aerial images for a subset of ZIP codes, primarily in the Washington D.C.–Maryland–Virginia (DMV) area.
+Typical research tasks
+----------------------
 
-Each row represents one ZIP code in one month and includes 33 engineered features. The dataset is designed to support multivariate time-series forecasting, imputation, multimodal fusion, and urban modeling tasks.
+* Spatio-temporal house-price prediction  
+* Socioeconomic modeling that blends census and amenity data  
+* Multimodal learning with tabular + satellite inputs  
+* Urban-change detection through remote sensing and vision–language models  
 
-**Use cases include:**
-
-- Spatio-temporal housing price prediction  
-- Socioeconomic modeling using census and amenity data  
-- Multimodal learning with tabular and satellite inputs  
-- Urban change detection through imagery and vision–language models
-
-## Data Access
+Data access
+-----------
 
 | Purpose | Link |
 |---------|------|
 | **Raw & log-transformed CSVs** | <https://virginiatech-my.sharepoint.com/:f:/g/personal/shengkun_vt_edu/EunsL7TsRDRMifm7MmVIbXsBGw5Mwg5JwuFsfXXAKHpvZQ?e=Z4tbU9> |
-| **Multimodal satellite and filled-missing data** | <https://www.kaggle.com/datasets/shengkunwang/housets-dataset> |
+| **Multimodal satellite & filled-missing data** | <https://www.kaggle.com/datasets/shengkunwang/housets-dataset> |
 
----
+Baselines
+---------
+
+### Case study with DMV_Multi_Data
+
+- Download `DMV_Multi_Data` from Kaggle  
+- set  
+  ```python
+  from pathlib import Path
+  DATA_ROOT = Path("/path/to/DMV_Multi_Data")
+  ```
+
+### Deep-learning (DNN)
+
+We run our DNN baselines with the official [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
+
+1. Copy the patched files in the `DNN/` directory so they overwrite the corresponding source files in the library.  
+2. Download all datasets into the `dataset/` directory before training.
+
+### Statistics & Machine-Learning Baselines
+
+From the `StatML/` directory run:
+
+```bash
+python stat.py \
+  --csv <path_to_csv> \
+  --model all \
+  --combos "(6,3),(6,6),(6,12),(12,3),(12,6),(12,12)" \
+  --n_components 4
+
+
+### Foundation-Model Experiments
+All foundation-model runs can be started directly with the Python scripts inside the `Foundation/` folder.
