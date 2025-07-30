@@ -25,7 +25,7 @@ Data access
 
 | Purpose | Link |
 |---------|------|
-| **Raw & log-transformed CSVs** | <https://virginiatech-my.sharepoint.com/:f:/g/personal/shengkun_vt_edu/EunsL7TsRDRMifm7MmVIbXsBGw5Mwg5JwuFsfXXAKHpvZQ?e=Z4tbU9> |
+| **Raw & log-transformed CSVs** | <[https://virginiatech-my.sharepoint.com/:f:/g/personal/shengkun_vt_edu/EunsL7TsRDRMifm7MmVIbXsBGw5Mwg5JwuFsfXXAKHpvZQ?e=Z4tbU9](https://virginiatech-my.sharepoint.com/:f:/g/personal/shengkun_vt_edu/EunsL7TsRDRMifm7MmVIbXsBGw5Mwg5JwuFsfXXAKHpvZQ?e=WlxLmk)> |
 | **Multimodal satellite & filled-missing data** | <https://www.kaggle.com/datasets/shengkunwang/housets-dataset> |
 
 Baselines
@@ -61,3 +61,17 @@ python stat.py \
 
 ### Foundation-Model Experiments
 All foundation-model runs can be started directly with the Python scripts inside the `Foundation/` folder.
+
+
+### Citation
+If you use **HouseTS** in your research, please cite:
+
+```bibtex
+@article{wang2025housets,
+  title   = {HouseTS: A Large-Scale, Multimodal Spatiotemporal US Housing Dataset},
+  author  = {Wang, Shengkun and Sun, Yanshen and Chen, Fanglan and Wang, Linhan and
+             Ramakrishnan, Naren and Lu, Chang-Tien and Chen, Yinlin},
+  journal = {arXiv e-prints},
+  pages   = {arXiv--2506},
+  year    = {2025}
+}
